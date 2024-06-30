@@ -3,7 +3,6 @@ from flask import Flask
 
 class AttachableMixin:
     def _attach_to(self, host: Any, label: Optional[str] = None):
-        print(f"Attaching {self} to {host}")
         raise NotImplementedError(f"{self} cannot be attached to {host} as {label}")
     
 class Attachable(Protocol):
@@ -12,8 +11,6 @@ class Attachable(Protocol):
 
 class zBrick(AttachableMixin):
     def __init__(self, *args, **kwargs):
-        print()
-        print(f"zBrick.__init__({args}, {kwargs})")
         super().__init__(*args, **kwargs)
     
     def attach(self, brick : Attachable, label: Optional[str] = None):
