@@ -1,13 +1,25 @@
+{% set title = title|default('Your zBricks Project (_base.html)') %}
+
+{% set theme = 'darkly' %}
+{% set theme_mode = 'dark' %}
+
+{% set theme = theme|default('css') %}
+{% if theme == 'css' %}
+  {% set _theme_base = 'bootstrap' %}
+{% else %}
+  {% set _theme_base = 'bootswatch' %}
+{% endif %}
+{% set theme_mode = theme_mode|default('light') %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="{{ theme_mode }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Default Title{% endblock %}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/{{ _theme_base }}@5.3.3/dist/{{ theme }}/bootstrap.min.css">
 </head>
-<body>
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+<body class="">
+  {% block body %}{% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 import pytest
 from zbricks import zFlask
-from project import create_app
+from project import create_app # type: ignore[import]
 
 @pytest.fixture
 def app() -> zFlask:

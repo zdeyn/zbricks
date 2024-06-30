@@ -8,6 +8,6 @@ def create_app():
 
     @flask.route('/')
     def hello_world():
-        return render_template('simple.html', content = 'Hello, World!')
+        return render_template('layout.html', content = 'Hello, World!')
 
     return flask

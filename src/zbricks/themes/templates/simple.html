@@ -1,9 +1,30 @@
 {% extends "_base.html" %}
+{% set theme = 'pulse' %}
+{% set theme_mode = 'dark' %}
+{% set title = page_title|default('Your zBricks Project (simple.html)') %}
 
-{% block title %}Default Layout{% endblock %}
+{% block body %}
+  <header class="container py-5 text-center">
+    <h1 class="display-3">{% block header %}{{ title }}{% endblock %}</h1>
+  </header>
 
-{% block content %}
-    <h1>Welcome to the Default Layout</h1>
-    <p>This is the default layout provided by the zBricks extension.</p>
-    {% block inner_content %}{{ content }}{% endblock %}
+  <main class="container">
+    {% block content %}
+    <section class="row justify-content-center">
+      <div class="col-4">
+        <div class="card border-primary">
+          <div class="card-body">
+            <p class="card-text text-center">
+            {{ content|default('Hello, World! (simple.html)') }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+  </main>
+
+  <footer class="container text-center py-4">
+    {% block footer %}<p>Powered by <a href="https://zbricks.org">zBricks</a></p>{% endblock %}
+  </footer>
 {% endblock %}
