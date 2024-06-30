@@ -1,16 +1,23 @@
 [tool.poetry]
 name = "zbricks"
-version = "0.1.0"
-description = ""
-authors = ["zdeyn <79044233+zdeyn@users.noreply.github.com>"]
+version = "0.0.1"
+description = "Drop-in extensions and augmentations for Flask"
+authors = ["zdeyn <zdeyn@zdeyn.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 Flask = "^3.0.3"
+flask-sqlalchemy = "^3.1.1"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
+mypy = "^1.10.1"
+
+[tool.mypy]
+python_version = "3.10"
+mypy_path = ["examples/hello-world/hello", "examples/sample-project/project"]
 
 [build-system]
 requires = ["poetry-core"]
