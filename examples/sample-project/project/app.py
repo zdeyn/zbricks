@@ -5,7 +5,6 @@ from zbricks.themes import DefaultTheme
 
 def create_app():
     flask = create_flask(__name__)
-    flask.attach(DefaultTheme(),'theme')
 
     @flask.route('/')
     def hello_world():
