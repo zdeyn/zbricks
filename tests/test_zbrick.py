@@ -1,4 +1,4 @@
-from zbricks import zBrick
+from zbricks.core import zBrick
 
 def test_zbrick():
     brick = zBrick()

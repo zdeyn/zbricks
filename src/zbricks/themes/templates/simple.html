@@ -1,0 +1,9 @@
+{% extends "_base.html" %}
+
+{% block title %}Default Layout{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Default Layout</h1>
+    <p>This is the default layout provided by the zBricks extension.</p>
+    {% block inner_content %}{{ content }}{% endblock %}
+{% endblock %}
